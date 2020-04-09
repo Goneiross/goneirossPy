@@ -1,3 +1,9 @@
+def printMatrix(A):
+    for row in A:
+        for val in row:
+            print (val, " ", end='')
+        print()
+
 def Gauss(A, b):
     n = len(A)
     for i in range (0,n):
