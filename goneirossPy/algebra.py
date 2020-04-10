@@ -7,7 +7,7 @@ def printMatrix(A):
             print (val, " ", end='')
         print()
 
-def Gauss(A, b):    
+def gauss(A, b):    
     """
     @param A: matrix
     @param b: vector
@@ -15,7 +15,6 @@ def Gauss(A, b):
     """
     n = len(A)
     for i in range (0,n):
-        printMatrix(A) 
         if A[i][i] != 0:
             p = 1 / A[i][i]
             for j in range (i,n):
@@ -26,7 +25,6 @@ def Gauss(A, b):
                     A[k][j] -= A[k][i]*A[i][j]
                 b[k] -= A[k][i]*b[i]
                 A[k][i]=0 
-            print(i)
     return A,b
 
 def solveLower2Diag(A,b):
@@ -40,7 +38,7 @@ def solveLower2Diag(A,b):
         b[i] =(b[i] - A[i][i-1]*b[i-1]) / A[i][i]
     return b
 
-def CholeskiTriDiag(A):
+def choleskiTriDiag(A):
     """
     @param A: tridiagonal symetric positive definite matrix
     @return: L such taht A=LLT
