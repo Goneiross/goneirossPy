@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="goneirossPy",
-    version="0.0.1",
+    version="0.0.2",
     author="Goneiross",
     author_email="guillaume.julien.pellerin@goneiross.org",
     description="Some usefull tools used in my projects",
