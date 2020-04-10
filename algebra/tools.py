@@ -1,10 +1,18 @@
 def printMatrix(A):
+    """
+    @param A: matrix
+    """
     for row in A:
         for val in row:
             print (val, " ", end='')
         print()
 
-def Gauss(A, b):
+def Gauss(A, b):    
+    """
+    @param A: matrix
+    @param b: vector
+    @return: reduced echelon form of A|b
+    """
     n = len(A)
     for i in range (0,n):
         printMatrix(A) 
@@ -17,6 +25,6 @@ def Gauss(A, b):
                 for j in range(i+1,n):
                     A[k][j] -= A[k][i]*A[i][j]
                 b[k] -= A[k][i]*b[i]
-                A[k][i]=0 #
+                A[k][i]=0 
             print(i)
-    return A
+    return A,b
