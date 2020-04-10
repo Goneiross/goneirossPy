@@ -29,6 +29,17 @@ def Gauss(A, b):
             print(i)
     return A,b
 
+def solveLower2Diag(A,b):
+    """
+    @param A: lower two diagonal matrix
+    @param b: vector
+    @return: b solutions
+    """
+    b[0] /= A[0][0]
+    for i in range (1, n-1):
+        b[i] =(b[i] - A[i][i-1]*b[i-1]) / A[i][i]
+    return b
+
 def CholeskiTriDiag(A):
     """
     @param A: tridiagonal symetric positive definite matrix
